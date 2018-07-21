@@ -1,0 +1,262 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(250, 250, 250);
+    font-family: "Montserrat Medium";
+    color: #00B0FF;
+}
+.noFill{
+    background: none;
+    fill: none;
+}
+li{
+    list-style-type: none;
+}
+/* Global parameters end */
+
+/* Title */
+h1{
+    font-family: "Montserrat Black";
+    font-size: 50px;
+    text-transform: uppercase;
+    text-align: center;
+    transition: all 0.25s ease;
+}
+
+/* Input */
+.inputContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    margin: 20px 0;
+}
+.inputContainer input{
+    position: relative;
+    width: 250px;
+    height: 40px;
+    border: none;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.1);
+    text-indent: 10px;
+    padding-right: 40px;
+    outline: none !important;
+    font-family: "Montserrat Medium";
+    color: #333;
+}
+.inputContainer input::placeholder{
+    opacity: 0.5;
+}
+
+.buttonHolder{
+    position: relative;
+}
+.buttonHolder button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 40px;
+    width: 40px;
+    border: none;
+    cursor: pointer;
+    background-color: #00B0FF;
+    outline: none !important;
+    transition: 0.3s ease;
+}
+.inputContainer button svg{
+    fill: #fff;
+    height: 20px;
+    width: 20px;
+    transition: 0.3s ease;
+}
+.inputContainer button:hover{
+    background-color:#0091EA;
+}
+
+/* Lists */
+.container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.todo li{
+    width: 350px;
+    min-height: 40px;
+    background-color: #fff;
+    box-shadow: 0 5px 2px rgba(0,0,0,0.05);
+    padding: 10px 60px 10px 10px;
+    word-break: break-word;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    transition: 0.25s ease;
+}
+.todo li .buttons{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.todo li .buttons > *{
+    margin: 0 5px;
+}
+.todo li .buttons button{
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+}
+.todo li .buttons button:last-of-type:before{
+    content: "";
+    width: 1px;
+    height: 30px;
+    background-color: #33333330;
+    position: absolute;
+    left: -6px;
+    top: -3px;
+}
+.todo li .buttons button svg{
+    width:22px;
+    height: 22px;
+}
+.complete svg{
+    fill: #2ecc71;
+    border-radius: 25px;
+    border: 2px solid #2ecc71;
+    transition: 0.15s ease;
+}
+.complete:hover svg{
+    background-color: #2ecc71;
+    fill: #fff;
+}
+.remove svg{
+    fill: rgba(0,0,0,0.3);
+    transition: 0.2s ease;
+}
+.remove:hover svg{
+    fill: #E53935;
+}
+.todo#todo{
+    position: relative;
+}
+/* Completed items list */
+.todo#completed{
+    position: relative;
+}
+.todo#completed li{
+    background-color: rgb(230, 230, 230);
+    color: #333;
+    opacity: 0.45;
+    box-shadow: none;
+}
+.todo#completed:before{
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    height: 1px;
+    background-color: rgba(0,0,0,0.1);
+}
+.todo#completed .complete svg{
+    background-color: #2ecc71;
+    fill: #fff;
+}
+.todo#completed .complete:hover svg{
+    background-color: #E53935;
+    border-radius: 25px;
+    border: 2px solid #E53935;
+    transition: 0.15s ease;
+}
+
+/* Text after the todo & completed lists */
+.todo#todo:empty:after{
+    content: "You have no tasks scheduled. Create some!";
+    margin: 15px 0 0 0;
+}
+.todo#completed:empty:after{
+    content: "You have no finished tasks. Get to work!";
+    margin: 15px 0 0 0;
+}
+ul.todo#todo:after, ul.todo#completed:after{
+    width: 250px;
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    color: #aaaaaa60;
+}
+/* Notification box */
+.notification{
+    height: 45px;
+    width: auto;
+    padding: 5px;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Montserrat SemiBold";
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    transform:translateY(250px);
+    border-radius: 2px;
+}
+.notificationCompleted{
+    animation: notification 2s ease-in-out forwards;
+    background-color: #2ecc71;
+    color: #fff;
+}
+.notificationDeleted{
+    animation: notification 2s ease-in-out forwards;
+    background-color: #E53935;
+    color: #fff;
+}
+.notificationAdded{
+    animation: notification 2s ease-in-out forwards;
+    background-color: #00B0FF;
+    color: #fff;
+}
+@keyframes notification{
+    0%{
+        transform: translateY(250px)
+    }
+    50%{
+        transform: translateY(0px)
+    }
+    60%{
+        transform: translateY(0px)
+    }
+    100%{
+        transform: translateY(250px)
+    }
+}
+
+/* Media querries */
+@media (max-width:375px){
+    .todo li{
+        width: 300px;
+    }
+}
+@media (max-width: 355px){
+    h1{
+        font-size: 40px;
+    }
+}
+@media (max-width: 315px){
+    .todo li{
+        width: 280px;
+    }
+}
