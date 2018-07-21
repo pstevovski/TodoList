@@ -1,3 +1,21 @@
+/* Include custom fonts */
+@font-face{
+    font-family: "Montserrat Regular";
+    src: url("fonts/Montserrat-Regular.ttf");
+}
+@font-face{
+    font-family: "Montserrat Medium";
+    src: url("fonts/Montserrat-Medium.ttf");
+}
+@font-face{
+    font-family: "Montserrat SemiBold";
+    src: url("fonts/Montserrat-SemiBold.ttf");
+}
+@font-face{
+    font-family: "Montserrat Black";
+    src: url("fonts/Montserrat-Black.ttf")
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -242,23 +260,6 @@ ul.todo#todo:after, ul.todo#completed:after{
     100%{
         transform: translateY(250px)
     }
-}
-/* Include custom fonts */
-@font-face{
-    font-family: "Montserrat Regular";
-    src: url("fonts/Montserrat-Regular.ttf");
-}
-@font-face{
-    font-family: "Montserrat Medium";
-    src: url("fonts/Montserrat-Medium.ttf");
-}
-@font-face{
-    font-family: "Montserrat SemiBold";
-    src: url("fonts/Montserrat-SemiBold.ttf");
-}
-@font-face{
-    font-family: "Montserrat Black";
-    src: url("fonts/Montserrat-Black.ttf")
 }
 
 /* Media querries */
