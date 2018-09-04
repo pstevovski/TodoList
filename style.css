@@ -214,7 +214,7 @@ ul.todo#todo:after, ul.todo#completed:after{
     display: block;
     text-align: center;
     font-size: 14px;
-    color: #aaaaaa60;
+    color: #aaaaaa80;
 }
 /* Notification box */
 .notification{
@@ -247,6 +247,23 @@ ul.todo#todo:after, ul.todo#completed:after{
     background-color: #00B0FF;
     color: #fff;
 }
+
+#deleteAllToBe{
+    padding: 5px;
+    border-radius: 3px;
+    border: none;
+    background-color: #fff;
+    box-shadow: 0px 3px 5px rgba(0,0,0,0.15);
+    font-family: "Montserrat Regular";
+    transition: all 0.1s ease;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+#deleteAllToBe:hover{
+    background-color:#0091EA;
+    color: #fff;
+}
+
 @keyframes notification{
     0%{
         transform: translateY(250px)
